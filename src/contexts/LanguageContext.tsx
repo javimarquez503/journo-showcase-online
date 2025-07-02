@@ -57,7 +57,7 @@ const translations = {
     // Contact Section
     contactTitle: 'Get In Touch',
     contactSubtitle: "Let's Connect",
-    contactDesc: 'Have a story tip, collaboration opportunity, or just want to chat about journalism? I'd love to hear from you.',
+    contactDesc: 'Have a story tip, collaboration opportunity, or just want to chat about journalism? I would love to hear from you.',
     namePlaceholder: 'Your Name',
     emailPlaceholder: 'Your Email',
     subjectPlaceholder: 'Subject',
