@@ -1,4 +1,3 @@
-
 import { createContext, useContext, useState, ReactNode } from 'react';
 
 type Language = 'en' | 'es';
@@ -18,46 +17,46 @@ const translations = {
     contact: 'Contact',
     
     // Hero Section
-    name: 'Sarah Mitchell',
-    title: 'Investigative Journalist',
-    description: 'Uncovering stories that matter. Specializing in political investigations, social justice, and environmental reporting with over 8 years of experience in digital and print media.',
+    name: 'Clark Kent',
+    title: 'Investigative Reporter',
+    description: 'Uncovering truth and justice through journalism. Specializing in investigative reporting, breaking news, and human interest stories with the Daily Planet in Metropolis.',
     viewWork: 'View My Work',
     getInTouch: 'Get In Touch',
     
     // About Section
     aboutTitle: 'About Me',
-    aboutP1: "I'm a dedicated investigative journalist with a passion for uncovering the truth and telling stories that make a difference. My work focuses on holding power accountable, amplifying underrepresented voices, and exploring the intersection of politics, environment, and social justice.",
-    aboutP2: "With a Master's degree in Journalism from Columbia University and eight years of experience working with leading publications, I've developed expertise in data-driven reporting, long-form investigations, and multimedia storytelling.",
-    aboutP3: "When I'm not chasing stories, you can find me mentoring young journalists, speaking at conferences about press freedom, or exploring new hiking trails with my camera.",
+    aboutP1: "I'm a dedicated investigative reporter with a passion for truth, justice, and protecting the innocent through journalism. My work focuses on exposing corruption, covering breaking news, and telling the stories of everyday heroes in Metropolis and beyond.",
+    aboutP2: "Raised in Smallville, Kansas, I bring small-town values to big-city journalism. With a degree from the University of Kansas and years of experience at the Daily Planet, I've covered everything from city hall corruption to extraordinary events that shape our world.",
+    aboutP3: "When I'm not chasing stories around Metropolis, I enjoy spending time with my colleagues at the Daily Planet, exploring the city, and always keeping an ear out for those who need someone to tell their story.",
     
     // Experience Section
     experienceTitle: 'Experience',
-    seniorReporter: 'Senior Investigative Reporter',
+    seniorReporter: 'Senior Staff Reporter',
     staffReporter: 'Staff Reporter',
     juniorReporter: 'Junior Reporter',
-    seniorDesc: 'Lead investigative projects focusing on government accountability and environmental issues. Published over 50 in-depth articles resulting in policy changes and public awareness campaigns.',
-    staffDesc: 'Covered local politics, city council meetings, and community issues. Developed sources and built relationships within the political landscape.',
-    juniorDesc: 'Started career covering breaking news, court proceedings, and human interest stories. Established foundation in journalistic ethics and reporting standards.',
+    seniorDesc: 'Leading investigative pieces on major stories affecting Metropolis and beyond. Specialized coverage of extraordinary events, city government, and human interest stories that matter to our community.',
+    staffDesc: 'Covered breaking news, city politics, and community events throughout Metropolis. Developed strong relationships with sources across all levels of city government and local organizations.',
+    juniorDesc: 'Started my journalism career covering local news, sports, and community events. Built foundation in ethical reporting and developed the investigative instincts that drive my work today.',
     
     // Articles Section
     articlesTitle: 'Featured Articles',
-    article1Title: 'The Hidden Cost of Industrial Pollution',
-    article1Desc: 'A six-month investigation into illegal dumping practices affecting local communities...',
-    article2Title: 'Campaign Finance Irregularities Exposed',
-    article2Desc: 'Uncovering questionable financial ties in the mayoral race that led to reforms...',
-    article3Title: 'Housing Crisis: Voices from the Street',
-    article3Desc: 'Personal stories from those affected by the affordable housing shortage...',
-    article4Title: 'Public Records Reveal Spending Waste',
-    article4Desc: 'Data analysis exposes millions in wasteful government spending...',
-    article5Title: 'Healthcare Access in Rural Communities',
-    article5Desc: 'Exploring the challenges faced by rural residents seeking medical care...',
-    article6Title: 'The Digital Divide in Education',
-    article6Desc: 'How the pandemic highlighted inequalities in educational technology access...',
+    article1Title: 'Corruption in City Hall Exposed',
+    article1Desc: 'Six-month investigation uncovering financial irregularities in Metropolis city contracts...',
+    article2Title: 'The Heroes Among Us',
+    article2Desc: 'A look at the everyday citizens of Metropolis who make extraordinary differences in their community...',
+    article3Title: 'LexCorp Under Scrutiny',
+    article3Desc: 'Investigating business practices and their impact on Metropolis workers and families...',
+    article4Title: 'Metropolis After the Storm',
+    article4Desc: 'How our city rebuilds and comes together after extraordinary challenges...',
+    article5Title: 'Small Town Values, Big City Dreams',
+    article5Desc: 'Exploring how rural transplants adapt to life in Metropolis while keeping their roots...',
+    article6Title: 'The Power of Truth in Journalism',
+    article6Desc: 'Why honest reporting matters more than ever in our complex world...',
     
     // Contact Section
     contactTitle: 'Get In Touch',
     contactSubtitle: "Let's Connect",
-    contactDesc: 'Have a story tip, collaboration opportunity, or just want to chat about journalism? I would love to hear from you.',
+    contactDesc: 'Have a news tip, story idea, or just want to discuss journalism? I would love to hear from you. Truth and transparency are the foundations of good reporting.',
     namePlaceholder: 'Your Name',
     emailPlaceholder: 'Your Email',
     subjectPlaceholder: 'Subject',
@@ -67,12 +66,12 @@ const translations = {
     messageDesc: "Thank you for your message. I'll get back to you soon.",
     
     // Footer
-    footerText: '© 2024 Sarah Mitchell. All rights reserved. | Dedicated to truth, transparency, and public service journalism.',
+    footerText: '© 2024 Clark Kent. All rights reserved. | Committed to truth, justice, and the power of honest journalism.',
     
     // Publications
-    washingtonHerald: 'The Washington Herald',
-    metroDailyNews: 'Metro Daily News',
-    cityTribune: 'City Tribune'
+    washingtonHerald: 'Daily Planet',
+    metroDailyNews: 'Metropolis Tribune',
+    cityTribune: 'Smallville Gazette'
   },
   es: {
     // Navigation
@@ -82,46 +81,46 @@ const translations = {
     contact: 'Contacto',
     
     // Hero Section
-    name: 'Sarah Mitchell',
-    title: 'Periodista de Investigación',
-    description: 'Descubriendo historias que importan. Especializada en investigaciones políticas, justicia social y reportajes ambientales con más de 8 años de experiencia en medios digitales e impresos.',
+    name: 'Clark Kent',
+    title: 'Reportero de Investigación',
+    description: 'Descubriendo la verdad y la justicia a través del periodismo. Especializado en reportajes de investigación, noticias de última hora e historias de interés humano con el Daily Planet en Metrópolis.',
     viewWork: 'Ver Mi Trabajo',
     getInTouch: 'Contactar',
     
     // About Section
     aboutTitle: 'Acerca de Mí',
-    aboutP1: 'Soy una periodista de investigación dedicada con pasión por descubrir la verdad y contar historias que marcan la diferencia. Mi trabajo se centra en responsabilizar al poder, amplificar voces subrepresentadas y explorar la intersección de política, medio ambiente y justicia social.',
-    aboutP2: 'Con una Maestría en Periodismo de la Universidad de Columbia y ocho años de experiencia trabajando con publicaciones líderes, he desarrollado experiencia en reportajes basados en datos, investigaciones de formato largo y narrativa multimedia.',
-    aboutP3: 'Cuando no estoy persiguiendo historias, puedes encontrarme mentoreando jóvenes periodistas, hablando en conferencias sobre libertad de prensa, o explorando nuevos senderos de montaña con mi cámara.',
+    aboutP1: 'Soy un reportero de investigación dedicado con pasión por la verdad, la justicia y proteger a los inocentes a través del periodismo. Mi trabajo se centra en exponer la corrupción, cubrir noticias de última hora y contar las historias de héroes cotidianos en Metrópolis y más allá.',
+    aboutP2: 'Criado en Smallville, Kansas, traigo valores de pueblo pequeño al periodismo de gran ciudad. Con un título de la Universidad de Kansas y años de experiencia en el Daily Planet, he cubierto desde corrupción en el ayuntamiento hasta eventos extraordinarios que moldean nuestro mundo.',
+    aboutP3: 'Cuando no estoy persiguiendo historias por Metrópolis, disfruto pasar tiempo con mis colegas del Daily Planet, explorando la ciudad, y siempre manteniendo el oído atento a aquellos que necesitan a alguien que cuente su historia.',
     
     // Experience Section
     experienceTitle: 'Experiencia',
-    seniorReporter: 'Reportera de Investigación Senior',
-    staffReporter: 'Reportera de Planta',
-    juniorReporter: 'Reportera Junior',
-    seniorDesc: 'Lidero proyectos de investigación enfocados en responsabilidad gubernamental y temas ambientales. Publiqué más de 50 artículos en profundidad que resultaron en cambios de políticas y campañas de conciencia pública.',
-    staffDesc: 'Cubrí política local, reuniones del consejo municipal y temas comunitarios. Desarrollé fuentes y construí relaciones dentro del panorama político.',
-    juniorDesc: 'Comencé mi carrera cubriendo noticias de última hora, procedimientos judiciales e historias de interés humano. Establecí una base en ética periodística y estándares de reportaje.',
+    seniorReporter: 'Reportero Senior de Planta',
+    staffReporter: 'Reportero de Planta',
+    juniorReporter: 'Reportero Junior',
+    seniorDesc: 'Lidero piezas de investigación sobre historias importantes que afectan a Metrópolis y más allá. Cobertura especializada de eventos extraordinarios, gobierno de la ciudad e historias de interés humano que importan a nuestra comunidad.',
+    staffDesc: 'Cubrí noticias de última hora, política de la ciudad y eventos comunitarios en toda Metrópolis. Desarrollé relaciones sólidas con fuentes en todos los niveles del gobierno de la ciudad y organizaciones locales.',
+    juniorDesc: 'Comencé mi carrera periodística cubriendo noticias locales, deportes y eventos comunitarios. Construí una base en reportajes éticos y desarrollé los instintos de investigación que impulsan mi trabajo hoy.',
     
     // Articles Section
     articlesTitle: 'Artículos Destacados',
-    article1Title: 'El Costo Oculto de la Contaminación Industrial',
-    article1Desc: 'Una investigación de seis meses sobre prácticas ilegales de vertidos que afectan a comunidades locales...',
-    article2Title: 'Irregularidades en Financiamiento de Campaña Expuestas',
-    article2Desc: 'Descubriendo vínculos financieros cuestionables en la carrera a la alcaldía que llevaron a reformas...',
-    article3Title: 'Crisis de Vivienda: Voces desde la Calle',
-    article3Desc: 'Historias personales de aquellos afectados por la escasez de vivienda asequible...',
-    article4Title: 'Registros Públicos Revelan Desperdicio de Gastos',
-    article4Desc: 'El análisis de datos expone millones en gastos gubernamentales desperdiciados...',
-    article5Title: 'Acceso a Atención Médica en Comunidades Rurales',
-    article5Desc: 'Explorando los desafíos que enfrentan los residentes rurales al buscar atención médica...',
-    article6Title: 'La Brecha Digital en la Educación',
-    article6Desc: 'Cómo la pandemia destacó las desigualdades en el acceso a tecnología educativa...',
+    article1Title: 'Corrupción en el Ayuntamiento Expuesta',
+    article1Desc: 'Investigación de seis meses descubriendo irregularidades financieras en contratos de la ciudad de Metrópolis...',
+    article2Title: 'Los Héroes Entre Nosotros',
+    article2Desc: 'Una mirada a los ciudadanos cotidianos de Metrópolis que hacen diferencias extraordinarias en su comunidad...',
+    article3Title: 'LexCorp Bajo Escrutinio',
+    article3Desc: 'Investigando prácticas comerciales y su impacto en los trabajadores y familias de Metrópolis...',
+    article4Title: 'Metrópolis Después de la Tormenta',
+    article4Desc: 'Cómo nuestra ciudad se reconstruye y se une después de desafíos extraordinarios...',
+    article5Title: 'Valores de Pueblo Pequeño, Sueños de Gran Ciudad',
+    article5Desc: 'Explorando cómo los trasplantados rurales se adaptan a la vida en Metrópolis mientras mantienen sus raíces...',
+    article6Title: 'El Poder de la Verdad en el Periodismo',
+    article6Desc: 'Por qué los reportajes honestos importan más que nunca en nuestro mundo complejo...',
     
     // Contact Section
     contactTitle: 'Ponte en Contacto',
     contactSubtitle: 'Conectemos',
-    contactDesc: '¿Tienes una pista para una historia, oportunidad de colaboración, o simplemente quieres charlar sobre periodismo? Me encantaría escucharte.',
+    contactDesc: '¿Tienes una pista de noticias, idea para una historia, o simplemente quieres discutir periodismo? Me encantaría escucharte. La verdad y la transparencia son los fundamentos de un buen reportaje.',
     namePlaceholder: 'Tu Nombre',
     emailPlaceholder: 'Tu Email',
     subjectPlaceholder: 'Asunto',
@@ -131,12 +130,12 @@ const translations = {
     messageDesc: 'Gracias por tu mensaje. Te responderé pronto.',
     
     // Footer
-    footerText: '© 2024 Sarah Mitchell. Todos los derechos reservados. | Dedicada a la verdad, transparencia y periodismo de servicio público.',
+    footerText: '© 2024 Clark Kent. Todos los derechos reservados. | Comprometido con la verdad, la justicia y el poder del periodismo honesto.',
     
     // Publications
-    washingtonHerald: 'The Washington Herald',
-    metroDailyNews: 'Metro Daily News',
-    cityTribune: 'City Tribune'
+    washingtonHerald: 'Daily Planet',
+    metroDailyNews: 'Metropolis Tribune',
+    cityTribune: 'Smallville Gazette'
   }
 };
 
