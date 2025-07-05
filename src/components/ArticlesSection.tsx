@@ -51,6 +51,11 @@ const ArticlesSection = () => {
     }
   ];
 
+  const handleArticleClick = (link: string) => {
+    // Secure external link opening
+    window.open(link, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section id="articles" className="py-16 bg-slate-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,13 +65,14 @@ const ArticlesSection = () => {
             <Card 
               key={index} 
               className="hover:shadow-lg transition-shadow cursor-pointer group"
-              onClick={() => window.open(article.link, '_blank', 'noopener,noreferrer')}
+              onClick={() => handleArticleClick(article.link)}
             >
               <CardHeader>
                 <img
                   src={article.image}
                   alt={article.title}
                   className="w-full h-48 object-cover rounded-lg mb-4"
+                  loading="lazy"
                 />
                 <CardTitle className="group-hover:text-slate-700 transition-colors">
                   {article.title}
