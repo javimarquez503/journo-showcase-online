@@ -11,42 +11,48 @@ const ArticlesSection = () => {
       title: t('article1Title'),
       description: t('article1Desc'),
       publication: t('xataka'),
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=200&fit=crop",
+      image: "https://i.blogs.es/f302e3/he-terminado-la-pau-y-quiero-dedicarme-a-la-ia-que-tengo-que-estudiar-cuatro-expertos-nos-responden-a-la-pregunta/840_560.jpeg",
+      alt: "PAU and AI: what to study, say four experts",
       link: "https://www.xataka.com/robotica-e-ia/he-terminado-pau-quiero-dedicarme-a-ia-que-tengo-que-estudiar-cuatro-expertos-nos-responden-a-pregunta"
     },
     {
       title: t('article2Title'),
       description: t('article2Desc'),
       publication: t('xataka'),
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=200&fit=crop",
+      image: "https://i.blogs.es/c6d2d1/contrasena-portada1/840_560.jpeg",
+      alt: "Secure passwords guide",
       link: "https://www.xataka.com/seguridad/cada-cuanto-debemos-cambiar-todas-nuestras-contrasenas-tres-expertos-ciberseguridad"
     },
     {
       title: t('article3Title'),
       description: t('article3Desc'),
       publication: t('xataka'),
-      image: "https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=400&h=200&fit=crop",
+      image: "https://i.blogs.es/19aebc/listas-publicidad-no-espana/840_560.jpeg",
+      alt: "Advertising lists in Spain",
       link: "https://www.xataka.com/empresas-y-economia/resolviendo-uno-grandes-misterios-nuestro-tiempo-sirve-algo-apuntarse-a-lista-robinson"
     },
     {
       title: t('article4Title'),
       description: t('article4Desc'),
       publication: t('xataka'),
-      image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=200&fit=crop",
+      image: "https://i.blogs.es/cbf992/xiaomi-portada/1200_800.jpeg",
+      alt: "Xiaomi 15 Ultra review",
       link: "https://www.xataka.com/analisis/xiaomi-15-opiniones-toma-contacto-fotos-video"
     },
     {
       title: t('article5Title'),
       description: t('article5Desc'),
       publication: t('xataka'),
-      image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=200&fit=crop",
+      image: "https://i.blogs.es/c8d7e3/galaxy-tab-s10-fe-portada/840_560.jpeg",
+      alt: "Galaxy Tab S10 FE first impressions",
       link: "https://www.xataka.com/analisis/samsung-galaxy-tab-s10-fe-plus-opiniones-toma-contacto-fotos-video"
     },
     {
       title: t('article6Title'),
       description: t('article6Desc'),
       publication: t('xataka'),
-      image: "https://images.unsplash.com/photo-1567581935884-3349723552ca?w=400&h=200&fit=crop",
+      image: "https://i.blogs.es/c5ff71/oppo-portada-1/1200_800.jpeg",
+      alt: "Oppo X innovation",
       link: "https://www.xataka.com/analisis/oppo-reno-13-pro-5g-opiniones-toma-contacto-fotos-video"
     }
   ];
@@ -70,7 +76,13 @@ const ArticlesSection = () => {
               <CardHeader>
                 <img
                   src={article.image}
-                  alt={article.title}
+                  srcSet={`
+                    ${article.image.replace(/\/(\d+)_(\d+)\./, '/480_320.')} 480w,
+                    ${article.image.replace(/\/(\d+)_(\d+)\./, '/768_512.')} 768w,
+                    ${article.image} 1200w
+                  `}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  alt={article.alt}
                   className="w-full h-48 object-cover rounded-lg mb-4"
                   loading="lazy"
                 />

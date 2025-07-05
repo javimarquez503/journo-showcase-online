@@ -14,9 +14,17 @@ const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-8">
           <img
-            src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face"
-            alt={t('name')}
-            className="w-32 h-32 rounded-full mx-auto mb-6 object-cover shadow-lg"
+            src="https://i.blogs.es/e0e69c/blob/original.jpeg"
+            srcSet="
+              https://i.blogs.es/e0e69c/blob/original.jpeg 480w,
+              https://i.blogs.es/e0e69c/blob/original.jpeg 768w,
+              https://i.blogs.es/e0e69c/blob/original.jpeg 1200w
+            "
+            sizes="(max-width: 768px) 200px, 200px"
+            alt="Portrait of Javier Marquez"
+            className="w-50 h-50 rounded-full mx-auto mb-6 object-cover shadow-lg"
+            style={{ width: '200px', height: '200px' }}
+            loading="lazy"
           />
         </div>
         <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6">
