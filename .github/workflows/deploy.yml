@@ -1,5 +1,10 @@
 name: Deploy to GitHub Pages
 
+permissions:
+  contents: read       # para leer el repositorio
+  pages: write         # para subir a GitHub Pages
+  id-token: write      # para emitir el token necesario
+
 on:
   push:
     branches: [ main ]
