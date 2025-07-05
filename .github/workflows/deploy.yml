@@ -9,17 +9,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Clonar el repositorio
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Activar Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      # 3. Cache de dependencias (opcional pero recomendado)
       - name: Cache npm
         uses: actions/cache@v3
         with:
@@ -28,20 +25,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      # 4. Instalar dependencias
       - name: Install dependencies
         run: npm ci
 
-      # 5. Construir la web
       - name: Build project
         run: npm run build
 
-      # 6. Subir los ficheros estáticos
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
-      # 7. Publicar en GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
