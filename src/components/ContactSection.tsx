@@ -47,7 +47,7 @@ const ContactSection = () => {
             <div className="space-y-4">
               <div className="flex items-center">
                 <Mail className="h-5 w-5 text-slate-600 mr-3" />
-                <span className="text-slate-700">javimarqueztech@gmail.com</span>
+                <span className="text-slate-700">sarah.mitchell@email.com</span>
               </div>
               <div className="flex items-center">
                 <span className="text-slate-600 mr-3">📱</span>
@@ -55,7 +55,7 @@ const ContactSection = () => {
               </div>
               <div className="flex items-center">
                 <span className="text-slate-600 mr-3">📍</span>
-                <span className="text-slate-700">Madrid, Spain</span>
+                <span className="text-slate-700">Washington, D.C.</span>
               </div>
             </div>
           </div>

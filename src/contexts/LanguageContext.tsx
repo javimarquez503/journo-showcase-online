@@ -1,131 +1,174 @@
-import React, { createContext, useContext, useState } from 'react';
+
+import { createContext, useContext, useState, ReactNode } from 'react';
 
 type Language = 'en' | 'es';
 
-type Translations = {
-  [key in Language]: {
-    [key: string]: string;
-  };
-};
-
-type LanguageContextType = {
+interface LanguageContextType {
   language: Language;
-  setLanguage: (language: Language) => void;
+  setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+}
+
+const translations = {
+  en: {
+    // Navigation
+    about: 'About',
+    experience: 'Experience',
+    articles: 'Articles',
+    contact: 'Contact',
+    
+    // Hero Section
+    name: 'Javier Marquez',
+    title: 'Tech Journalist',
+    description: "I'm a tech journalist with a solid background in broadcasting and digital media. I write for Xataka, one of the leading Spanish-language technology publications, and have covered everything from AI and cybersecurity to mobile devices and innovation. I began my career in radio and television in Argentina and later moved to Spain, where I focus on technology that impacts everyday life.",
+    viewWork: 'View My Work',
+    getInTouch: 'Get In Touch',
+    
+    // About Section
+    aboutTitle: 'About Me',
+    aboutP1: "I'm a tech journalist with a solid background in broadcasting and digital media. I write for Xataka, one of the leading Spanish-language technology publications, and have covered everything from AI and cybersecurity to mobile devices and innovation.",
+    aboutP2: "I began my career in radio and television in Argentina and later moved to Spain, where I focus on technology that impacts everyday life. My work spans from breaking down complex AI developments to reviewing the latest consumer electronics.",
+    aboutP3: "When I'm not writing about the latest tech trends, I enjoy exploring how emerging technologies can make a real difference in people's daily lives, always keeping accessibility and practical impact at the forefront of my reporting.",
+    
+    // Experience Section
+    experienceTitle: 'Experience',
+    editor: 'Editor',
+    techWriter: 'Tech Writer',
+    techContentPresenter: 'Tech Content Presenter',
+    journalist: 'Journalist',
+    host: 'Host',
+    newsAnchor: 'News Anchor',
+    techColumnist: 'Technology Columnist',
+    editorDesc: 'Writing about consumer technology, AI, cybersecurity and innovation for the leading tech publication in Spanish.',
+    techWriterDesc: 'Covered consumer electronics, software and cybersecurity with a focus on practical impact.',
+    presenterDesc: 'Produced and presented tech-related content for one of Argentina\'s most popular radio stations.',
+    journalistDesc: 'Created digital and on-air tech content; audience analytics and metric reporting.',
+    hostDesc: 'Produced and hosted a regional TV show focused on explaining emerging technologies.',
+    anchorDesc: 'Anchored and co-produced the evening news. Reported live from the field on major events.',
+    columnistDesc: 'Wrote and presented weekly tech segments for television and radio audiences in San Luis, Argentina.',
+    
+    // Articles Section
+    articlesTitle: 'Featured Articles',
+    article1Title: 'I\'ve just finished high school and want to work in AI. What should I study?',
+    article1Desc: 'A deep-dive featuring leading voices in Spanish tech to guide the next generation of AI professionals.',
+    article2Title: 'How often should we change all our passwords?',
+    article2Desc: 'A cybersecurity piece that gathers expert opinions on a habit we all question but rarely update.',
+    article3Title: 'What\'s the point of the Robinson List? We asked the experts',
+    article3Desc: 'An investigation into the effectiveness of Spain\'s main opt-out advertising register.',
+    article4Title: 'Hands-on: Xiaomi 15 Ultra',
+    article4Desc: 'First impressions of Xiaomi\'s flagship: camera, performance and why it matters in 2025.',
+    article5Title: 'Hands-on: Samsung Galaxy Tab S10 FE+',
+    article5Desc: 'Early impressions of Samsung\'s new tablet: productivity meets affordability.',
+    article6Title: 'Hands-on: OPPO Reno 13 Pro 5G',
+    article6Desc: 'A sleek contender in the mid-range with a premium feel and strong photography focus.',
+    
+    // Contact Section
+    contactTitle: 'Get In Touch',
+    contactSubtitle: 'Let\'s Connect',
+    contactDesc: 'Have a story idea, want to discuss tech trends, or interested in collaborating? I\'d love to hear from you. Technology moves fast, and the best stories come from meaningful conversations.',
+    namePlaceholder: 'Your Name',
+    emailPlaceholder: 'Your Email',
+    subjectPlaceholder: 'Subject',
+    messagePlaceholder: 'Your Message',
+    sendMessage: 'Send Message',
+    messageSent: 'Message sent!',
+    messageDesc: 'Thank you for your message. I\'ll get back to you soon.',
+    
+    // Footer
+    footerText: '© 2024 Javier Marquez. All rights reserved. | Tech journalist covering innovation, AI, and cybersecurity.',
+    
+    // Publications
+    xataka: 'Xataka',
+    hipertextual: 'Hipertextual',
+    la100: 'La 100',
+    radioMitre: 'Radio Mitre',
+    ctv: 'CTV',
+    variousMedia: 'Various Media'
+  },
+  es: {
+    // Navigation
+    about: 'Acerca de',
+    experience: 'Experiencia',
+    articles: 'Artículos',
+    contact: 'Contacto',
+    
+    // Hero Section
+    name: 'Javier Marquez',
+    title: 'Periodista Tecnológico',
+    description: 'Soy un periodista tecnológico con una sólida formación en medios audiovisuales y digitales. Escribo para Xataka, una de las principales publicaciones tecnológicas en español, y he cubierto todo desde IA y ciberseguridad hasta dispositivos móviles e innovación. Comencé mi carrera en radio y televisión en Argentina y luego me mudé a España, donde me enfoco en tecnología que impacta la vida cotidiana.',
+    viewWork: 'Ver Mi Trabajo',
+    getInTouch: 'Contactar',
+    
+    // About Section
+    aboutTitle: 'Acerca de Mí',
+    aboutP1: 'Soy un periodista tecnológico con una sólida formación en medios audiovisuales y digitales. Escribo para Xataka, una de las principales publicaciones tecnológicas en español, y he cubierto todo desde IA y ciberseguridad hasta dispositivos móviles e innovación.',
+    aboutP2: 'Comencé mi carrera en radio y televisión en Argentina y luego me mudé a España, donde me enfoco en tecnología que impacta la vida cotidiana. Mi trabajo abarca desde desglosar desarrollos complejos de IA hasta reseñar los últimos productos electrónicos de consumo.',
+    aboutP3: 'Cuando no estoy escribiendo sobre las últimas tendencias tecnológicas, disfruto explorando cómo las tecnologías emergentes pueden marcar una diferencia real en la vida diaria de las personas, siempre manteniendo la accesibilidad y el impacto práctico en el centro de mis reportajes.',
+    
+    // Experience Section
+    experienceTitle: 'Experiencia',
+    editor: 'Editor',
+    techWriter: 'Redactor Tecnológico',
+    techContentPresenter: 'Presentador de Contenido Tecnológico',
+    journalist: 'Periodista',
+    host: 'Conductor',
+    newsAnchor: 'Presentador de Noticias',
+    techColumnist: 'Columnista de Tecnología',
+    editorDesc: 'Escribiendo sobre tecnología de consumo, IA, ciberseguridad e innovación para la principal publicación tecnológica en español.',
+    techWriterDesc: 'Cubrí electrónicos de consumo, software y ciberseguridad con enfoque en el impacto práctico.',
+    presenterDesc: 'Produje y presenté contenido relacionado con tecnología para una de las estaciones de radio más populares de Argentina.',
+    journalistDesc: 'Creé contenido tecnológico digital y al aire; análisis de audiencia y reporte de métricas.',
+    hostDesc: 'Produje y conduje un programa de TV regional enfocado en explicar tecnologías emergentes.',
+    anchorDesc: 'Presenté y coproducí el noticiero de la noche. Reporté en vivo desde el campo en eventos importantes.',
+    columnistDesc: 'Escribí y presenté segmentos tecnológicos semanales para audiencias de televisión y radio en San Luis, Argentina.',
+    
+    // Articles Section
+    articlesTitle: 'Artículos Destacados',
+    article1Title: 'He terminado la PAU y quiero dedicarme a la IA: ¿qué tengo que estudiar?',
+    article1Desc: 'Un análisis profundo con las voces líderes en tecnología española para guiar a la próxima generación de profesionales de IA.',
+    article2Title: '¿Cada cuánto debemos cambiar todas nuestras contraseñas?',
+    article2Desc: 'Un artículo de ciberseguridad que reúne opiniones de expertos sobre un hábito que todos cuestionamos pero rara vez actualizamos.',
+    article3Title: '¿Sirve de algo apuntarse a la Lista Robinson?',
+    article3Desc: 'Una investigación sobre la efectividad del principal registro de exclusión publicitaria de España.',
+    article4Title: 'Toma de contacto: Xiaomi 15 Ultra',
+    article4Desc: 'Primeras impresiones del buque insignia de Xiaomi: cámara, rendimiento y por qué importa en 2025.',
+    article5Title: 'Toma de contacto: Samsung Galaxy Tab S10 FE+',
+    article5Desc: 'Primeras impresiones de la nueva tablet de Samsung: productividad y asequibilidad.',
+    article6Title: 'Toma de contacto: OPPO Reno 13 Pro 5G',
+    article6Desc: 'Un competidor elegante en la gama media con sensación premium y fuerte enfoque fotográfico.',
+    
+    // Contact Section
+    contactTitle: 'Ponte en Contacto',
+    contactSubtitle: 'Conectemos',
+    contactDesc: '¿Tienes una idea para una historia, quieres discutir tendencias tecnológicas, o estás interesado en colaborar? Me encantaría escucharte. La tecnología avanza rápido, y las mejores historias vienen de conversaciones significativas.',
+    namePlaceholder: 'Tu Nombre',
+    emailPlaceholder: 'Tu Email',
+    subjectPlaceholder: 'Asunto',
+    messagePlaceholder: 'Tu Mensaje',
+    sendMessage: 'Enviar Mensaje',
+    messageSent: '¡Mensaje enviado!',
+    messageDesc: 'Gracias por tu mensaje. Te responderé pronto.',
+    
+    // Footer
+    footerText: '© 2024 Javier Marquez. Todos los derechos reservados. | Periodista tecnológico cubriendo innovación, IA y ciberseguridad.',
+    
+    // Publications
+    xataka: 'Xataka',
+    hipertextual: 'Hipertextual',
+    la100: 'La 100',
+    radioMitre: 'Radio Mitre',
+    ctv: 'CTV',
+    variousMedia: 'Medios Varios'
+  }
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const useLanguage = (): LanguageContextType => {
-  const context = useContext(LanguageContext);
-  if (!context) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
-  }
-  return context;
-};
-
-export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
+export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<Language>('en');
 
-  const translations = {
-    en: {
-      heroTitle: "Hi, I'm Javi Márquez",
-      heroSubtitle: "Technology Journalist & Content Creator",
-      heroDescription: "With over 8 years of experience, I specialize in creating engaging content about technology, cybersecurity, and artificial intelligence. I transform complex topics into clear and accessible stories.",
-      aboutTitle: "About Me",
-      aboutSubtitle: "A Technology Enthusiast",
-      aboutDescription1: "I am a technology journalist with a passion for cybersecurity and artificial intelligence. Throughout my career, I have dedicated myself to understanding and communicating how technology impacts our lives.",
-      aboutDescription2: "My goal is to make technology accessible to everyone, demystifying complex concepts and providing clear and concise information. I believe in the power of knowledge to empower people in an increasingly digital world.",
-      experienceTitle: "Experience",
-      experienceSubtitle: "My Professional Journey",
-      experienceItem1Title: "Cybersecurity Analyst",
-      experienceItem1Company: "Deloitte",
-      experienceItem1Date: "2018 - 2020",
-      experienceItem1Description: "Conducted security audits and vulnerability assessments for major companies, ensuring the protection of their critical assets.",
-      experienceItem2Title: "Technology Journalist",
-      experienceItem2Company: "Xataka",
-      experienceItem2Date: "2020 - Present",
-      experienceItem2Description: "Write about cybersecurity, artificial intelligence, and technology trends. Conducted in-depth analysis and created engaging content for a broad audience.",
-      experienceItem3Title: "Content Creator",
-      experienceItem3Company: "JaviMárquez.tech",
-      experienceItem3Date: "2022 - Present",
-      experienceItem3Description: "Create content on cybersecurity, AI, and technology trends for a broad audience.",
-      articlesTitle: "Featured Articles",
-      article1Title: "What to study if you want to dedicate yourself to AI: four experts answer",
-      article1Desc: "If you want to focus your professional future on artificial intelligence, here are some tips to guide you.",
-      article2Title: "How often should we change all our passwords? Three cybersecurity experts",
-      article2Desc: "We review what password hygiene consists of, how often we should change them and what to do to create strong keys.",
-      article3Title: "What is the Robinson List for and does it really work?",
-      article3Desc: "We explain what the Robinson List is, how it works and what you have to do to register.",
-      article4Title: "Xiaomi 15: opinions, first contact (photos and video)",
-      article4Desc: "Xiaomi has just presented its new high-end mobile, and we have already been able to test it. These are our first impressions.",
-      article5Title: "Samsung Galaxy Tab S10 FE Plus: opinions, first contact (photos and video)",
-      article5Desc: "Samsung has just presented its new high-end tablet, and we have already been able to test it. These are our first impressions.",
-      article6Title: "OPPO Reno 13 Pro 5G: opinions, first contact (photos and video)",
-      article6Desc: "OPPO has just presented its new high-end mobile, and we have already been able to test it. These are our first impressions.",
-      xataka: "Xataka",
-      contactTitle: "Contact",
-      contactSubtitle: "Get In Touch",
-      contactDesc: "I'm always interested in new opportunities and collaborations. Whether you have a story tip, want to discuss the latest tech trends, or are looking for a technology journalist, feel free to reach out.",
-      namePlaceholder: "Your Name",
-      emailPlaceholder: "Your Email",
-      subjectPlaceholder: "Subject",
-      messagePlaceholder: "Your Message",
-      sendMessage: "Send Message",
-      messageSent: "Message Sent!",
-      messageDesc: "Thanks for reaching out. I'll get back to you as soon as possible."
-    },
-    es: {
-      heroTitle: "Hola, soy Javi Márquez",
-      heroSubtitle: "Periodista Tecnológico y Creador de Contenido",
-      heroDescription: "Con más de 8 años de experiencia, me especializo en crear contenido atractivo sobre tecnología, ciberseguridad e inteligencia artificial. Transformo temas complejos en historias claras y accesibles.",
-      aboutTitle: "Sobre Mí",
-      aboutSubtitle: "Un Entusiasta de la Tecnología",
-      aboutDescription1: "Soy un periodista tecnológico con pasión por la ciberseguridad y la inteligencia artificial. A lo largo de mi carrera, me he dedicado a entender y comunicar cómo la tecnología impacta nuestras vidas.",
-      aboutDescription2: "Mi objetivo es hacer que la tecnología sea accesible para todos, desmitificando conceptos complejos y proporcionando información clara y concisa. Creo en el poder del conocimiento para empoderar a las personas en un mundo cada vez más digital.",
-      experienceTitle: "Experiencia",
-      experienceSubtitle: "Mi Trayectoria Profesional",
-      experienceItem1Title: "Analista de Ciberseguridad",
-      experienceItem1Company: "Deloitte",
-      experienceItem1Date: "2018 - 2020",
-      experienceItem1Description: "Realicé auditorías de seguridad y evaluaciones de vulnerabilidades para importantes empresas, garantizando la protección de sus activos críticos.",
-      experienceItem2Title: "Periodista Tecnológico",
-      experienceItem2Company: "Xataka",
-      experienceItem2Date: "2020 - Presente",
-      experienceItem2Description: "Escribo sobre ciberseguridad, inteligencia artificial y tendencias tecnológicas. Realicé análisis en profundidad y creé contenido atractivo para una amplia audiencia.",
-      experienceItem3Title: "Creador de Contenido",
-      experienceItem3Company: "JaviMárquez.tech",
-      experienceItem3Date: "2022 - Presente",
-      experienceItem3Description: "Creo contenido sobre ciberseguridad, IA y tendencias tecnológicas para una amplia audiencia.",
-      articlesTitle: "Artículos Destacados",
-      article1Title: "Qué estudiar si quieres dedicarte a la IA: responden cuatro expertos",
-      article1Desc: "Si quieres enfocar tu futuro profesional a la inteligencia artificial, aquí tienes algunos consejos para orientarte.",
-      article2Title: "¿Cada cuánto debemos cambiar todas nuestras contraseñas? Tres expertos en ciberseguridad",
-      article2Desc: "Repasamos en qué consiste la higiene de contraseñas, cada cuánto deberíamos cambiarlas y qué hacer para crear claves robustas.",
-      article3Title: "¿Para qué sirve la Lista Robinson y realmente funciona?",
-      article3Desc: "Te explicamos qué es la Lista Robinson, cómo funciona y qué tienes que hacer para apuntarte.",
-      article4Title: "Xiaomi 15: opiniones, toma de contacto (fotos y vídeo)",
-      article4Desc: "Xiaomi acaba de presentar su nuevo móvil de gama alta, y ya hemos podido probarlo. Estas son nuestras primeras impresiones.",
-      article5Title: "Samsung Galaxy Tab S10 FE Plus: opiniones, toma de contacto (fotos y vídeo)",
-      article5Desc: "Samsung acaba de presentar su nueva tablet de gama alta, y ya hemos podido probarlo. Estas son nuestras primeras impresiones.",
-      article6Title: "OPPO Reno 13 Pro 5G: opiniones, toma de contacto (fotos y vídeo)",
-      article6Desc: "OPPO acaba de presentar su nuevo móvil de gama alta, y ya hemos podido probarlo. Estas son nuestras primeras impresiones.",
-      xataka: "Xataka",
-      contactTitle: "Contacto",
-      contactSubtitle: "Ponte en Contacto",
-      contactDesc: "Siempre estoy interesado en nuevas oportunidades y colaboraciones. Ya sea que tengas una pista para una historia, quieras discutir las últimas tendencias tecnológicas, o busques un periodista de tecnología, no dudes en contactarme.",
-      namePlaceholder: "Tu Nombre",
-      emailPlaceholder: "Tu Correo Electrónico",
-      subjectPlaceholder: "Asunto",
-      messagePlaceholder: "Tu Mensaje",
-      sendMessage: "Enviar Mensaje",
-      messageSent: "¡Mensaje Enviado!",
-      messageDesc: "Gracias por contactarme. Te responderé lo antes posible."
-    }
-  };
-
-  const t = (key: string) => {
-    return translations[language][key] || key;
+  const t = (key: string): string => {
+    return translations[language][key as keyof typeof translations['en']] || key;
   };
 
   return (
@@ -133,4 +176,12 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
       {children}
     </LanguageContext.Provider>
   );
+};
+
+export const useLanguage = () => {
+  const context = useContext(LanguageContext);
+  if (!context) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
 };
