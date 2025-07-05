@@ -1,9 +1,9 @@
 name: Deploy to GitHub Pages
 
 permissions:
-  contents: read       # para leer el repositorio
-  pages: write         # para subir a GitHub Pages
-  id-token: write      # para emitir el token necesario
+  contents: read
+  pages: write
+  id-token: write
 
 on:
   push:
@@ -36,10 +36,16 @@ jobs:
       - name: Build project
         run: npm run build
 
+      # ① Configurar Pages (necesario antes de subir artefacto)
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      # ② Subir el build generado
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
+      # ③ Desplegar en Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
