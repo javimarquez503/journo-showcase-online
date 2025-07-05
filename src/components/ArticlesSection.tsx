@@ -10,38 +10,44 @@ const ArticlesSection = () => {
     {
       title: t('article1Title'),
       description: t('article1Desc'),
-      publication: t('washingtonHerald'),
-      image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=200&fit=crop"
+      publication: t('xataka'),
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=200&fit=crop",
+      link: "https://www.xataka.com/robotica-e-ia/he-terminado-pau-quiero-dedicarme-a-ia-que-tengo-que-estudiar-cuatro-expertos-nos-responden-a-pregunta"
     },
     {
       title: t('article2Title'),
       description: t('article2Desc'),
-      publication: t('washingtonHerald'),
-      image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=400&h=200&fit=crop"
+      publication: t('xataka'),
+      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=200&fit=crop",
+      link: "https://www.xataka.com/seguridad/cada-cuanto-debemos-cambiar-todas-nuestras-contrasenas-tres-expertos-ciberseguridad"
     },
     {
       title: t('article3Title'),
       description: t('article3Desc'),
-      publication: t('metroDailyNews'),
-      image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=200&fit=crop"
+      publication: t('xataka'),
+      image: "https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=400&h=200&fit=crop",
+      link: "https://www.xataka.com/empresas-y-economia/resolviendo-uno-grandes-misterios-nuestro-tiempo-sirve-algo-apuntarse-a-lista-robinson"
     },
     {
       title: t('article4Title'),
       description: t('article4Desc'),
-      publication: t('washingtonHerald'),
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=200&fit=crop"
+      publication: t('xataka'),
+      image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=200&fit=crop",
+      link: "https://www.xataka.com/analisis/xiaomi-15-opiniones-toma-contacto-fotos-video"
     },
     {
       title: t('article5Title'),
       description: t('article5Desc'),
-      publication: t('metroDailyNews'),
-      image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=200&fit=crop"
+      publication: t('xataka'),
+      image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=200&fit=crop",
+      link: "https://www.xataka.com/analisis/samsung-galaxy-tab-s10-fe-plus-opiniones-toma-contacto-fotos-video"
     },
     {
       title: t('article6Title'),
       description: t('article6Desc'),
-      publication: t('cityTribune'),
-      image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=200&fit=crop"
+      publication: t('xataka'),
+      image: "https://images.unsplash.com/photo-1567581935884-3349723552ca?w=400&h=200&fit=crop",
+      link: "https://www.xataka.com/analisis/oppo-reno-13-pro-5g-opiniones-toma-contacto-fotos-video"
     }
   ];
 
@@ -51,7 +57,11 @@ const ArticlesSection = () => {
         <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center">{t('articlesTitle')}</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {articles.map((article, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow cursor-pointer group">
+            <Card 
+              key={index} 
+              className="hover:shadow-lg transition-shadow cursor-pointer group"
+              onClick={() => window.open(article.link, '_blank', 'noopener,noreferrer')}
+            >
               <CardHeader>
                 <img
                   src={article.image}
