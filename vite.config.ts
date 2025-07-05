@@ -5,9 +5,13 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/journo-showcase-online/',    // ← Añadido para GitHub Pages
   server: {
     host: "::",
     port: 8080,
+  },
+  build: {                             // ← Añadido para definir la carpeta de salida
+    outDir: 'dist',
   },
   plugins: [
     react(),
