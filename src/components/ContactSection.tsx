@@ -118,7 +118,7 @@ const ContactSection = () => {
               </div>
               <div className="flex items-center">
                 <span className="text-slate-600 mr-3">💬</span>
-                <span className="text-slate-700">Signal: javimarquez.01</span>
+                <span className="text-slate-700">Signal: @javimarquez.01</span>
               </div>
               <div className="flex items-center">
                 <span className="text-slate-600 mr-3">📍</span>
