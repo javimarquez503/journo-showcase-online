@@ -114,7 +114,7 @@ const ContactSection = () => {
             <div className="space-y-4">
               <div className="flex items-center">
                 <Mail className="h-5 w-5 text-slate-600 mr-3" />
-                <span className="text-slate-700">javimarqueztech@gmail.com</span>
+                <span className="text-slate-700">marquez.javier@proton.me</span>
               </div>
               <div className="flex items-center">
                 <span className="text-slate-600 mr-3">💬</span>
