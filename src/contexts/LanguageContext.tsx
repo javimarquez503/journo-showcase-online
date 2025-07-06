@@ -32,7 +32,7 @@ const translations = {
     // Experience Section
     experienceTitle: 'Experiencia',
     editor: 'Editor',
-    techWriter: 'Redactor tecnológico',
+    techWriter: 'Redactor de tecnología',
     digitalContentCreator: 'Creador de contenidos digitales',
     hostProducer: 'Conductor y productor',
     newsAnchor: 'Presentador de noticias y reportero',
