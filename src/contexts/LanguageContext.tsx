@@ -72,7 +72,7 @@ const translations = {
     messageDesc: 'Gracias por tu mensaje. Te responderé pronto.',
     
     // Footer
-    footerText: '© 2024 Javier Marquez. Todos los derechos reservados. | Periodista tecnológico cubriendo innovación, IA y ciberseguridad.',
+    footerText: '© 2025 Javier Marquez. Todos los derechos reservados.',
     
     // Publications
     xataka: 'Xataka',
