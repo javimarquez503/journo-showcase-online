@@ -36,7 +36,7 @@ const translations = {
     digitalContentCreator: 'Creador de contenidos digitales',
     hostProducer: 'Conductor y productor',
     newsAnchor: 'Presentador de noticias y reportero',
-    techColumnist: 'Columnista de Tecnología',
+    techColumnist: 'Columnista de tecnología',
     editorDesc: 'Escribo sobre tecnología de consumo, inteligencia artificial, ciberseguridad e innovación en Xataka, la principal publicación tecnológica en español. Mi trabajo consiste en analizar estos temas con rigor, teniendo siempre presente el contexto y cómo estos cambios impactan en nuestra vida cotidiana.',
     techWriterDesc: 'Escribí sobre tecnología de consumo, software y ciberseguridad, con una redacción clara y precisa. El objetivo era explicar temas complejos de forma comprensible y útil para el lector.',
     digitalContentCreatorDesc: 'Formé parte del equipo digital de ambas emisoras, creando artículos para sus webs y presentando vídeos sobre tecnología para redes sociales. Muchos de esos contenidos se publicaron en la cuenta de Instagram de La 100, con más de dos millones de seguidores.',
