@@ -17,7 +17,7 @@ const ExperienceSection = () => {
                 <CardTitle className="text-xl">{t('editor')}</CardTitle>
                 <Briefcase className="h-5 w-5 text-slate-600" />
               </div>
-              <p className="text-slate-600">Webedia / {t('xataka')} • Dec 2021 - Present</p>
+              <p className="text-slate-600">{t('xataka')} (Webedia) · Dic 2021 – Actualidad</p>
             </CardHeader>
             <CardContent>
               <p className="text-slate-700">
@@ -32,7 +32,7 @@ const ExperienceSection = () => {
                 <CardTitle className="text-xl">{t('techWriter')}</CardTitle>
                 <Briefcase className="h-5 w-5 text-slate-600" />
               </div>
-              <p className="text-slate-600">{t('hipertextual')} • Nov 2020 - Dec 2021</p>
+              <p className="text-slate-600">{t('hipertextual')} · Nov 2020 – Dic 2021</p>
             </CardHeader>
             <CardContent>
               <p className="text-slate-700">
@@ -44,14 +44,14 @@ const ExperienceSection = () => {
           <Card className="border-l-4 border-l-slate-500">
             <CardHeader>
               <div className="flex items-center justify-between">
-                <CardTitle className="text-xl">{t('techContentPresenter')}</CardTitle>
+                <CardTitle className="text-xl">{t('digitalContentCreator')}</CardTitle>
                 <Briefcase className="h-5 w-5 text-slate-600" />
               </div>
-              <p className="text-slate-600">{t('la100')} • Nov 2019 - Mar 2021</p>
+              <p className="text-slate-600">{t('radioMitre')} y {t('la100')} (Grupo Clarín) · Nov 2020 – Dic 2021</p>
             </CardHeader>
             <CardContent>
               <p className="text-slate-700">
-                {t('presenterDesc')}
+                {t('digitalContentCreatorDesc')}
               </p>
             </CardContent>
           </Card>
@@ -59,14 +59,14 @@ const ExperienceSection = () => {
           <Card className="border-l-4 border-l-slate-400">
             <CardHeader>
               <div className="flex items-center justify-between">
-                <CardTitle className="text-xl">{t('journalist')}</CardTitle>
+                <CardTitle className="text-xl">{t('hostProducer')}</CardTitle>
                 <Briefcase className="h-5 w-5 text-slate-600" />
               </div>
-              <p className="text-slate-600">{t('radioMitre')} • Nov 2019 - Mar 2021</p>
+              <p className="text-slate-600">{t('ctv')} · Oct 2018 – Abr 2019</p>
             </CardHeader>
             <CardContent>
               <p className="text-slate-700">
-                {t('journalistDesc')}
+                {t('hostProducerDesc')}
               </p>
             </CardContent>
           </Card>
@@ -74,14 +74,14 @@ const ExperienceSection = () => {
           <Card className="border-l-4 border-l-slate-300">
             <CardHeader>
               <div className="flex items-center justify-between">
-                <CardTitle className="text-xl">{t('host')}</CardTitle>
+                <CardTitle className="text-xl">{t('newsAnchor')}</CardTitle>
                 <Briefcase className="h-5 w-5 text-slate-600" />
               </div>
-              <p className="text-slate-600">Tecnología para vos ({t('ctv')}) • Oct 2018 - Apr 2019</p>
+              <p className="text-slate-600">{t('ctv')} · 2014 – 2019</p>
             </CardHeader>
             <CardContent>
               <p className="text-slate-700">
-                {t('hostDesc')}
+                {t('newsAnchorDesc')}
               </p>
             </CardContent>
           </Card>
@@ -89,29 +89,14 @@ const ExperienceSection = () => {
           <Card className="border-l-4 border-l-slate-200">
             <CardHeader>
               <div className="flex items-center justify-between">
-                <CardTitle className="text-xl">{t('newsAnchor')}</CardTitle>
-                <Briefcase className="h-5 w-5 text-slate-600" />
-              </div>
-              <p className="text-slate-600">Informe {t('ctv')} • Dec 2014 - Apr 2019</p>
-            </CardHeader>
-            <CardContent>
-              <p className="text-slate-700">
-                {t('anchorDesc')}
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="border-l-4 border-l-slate-100">
-            <CardHeader>
-              <div className="flex items-center justify-between">
                 <CardTitle className="text-xl">{t('techColumnist')}</CardTitle>
                 <Briefcase className="h-5 w-5 text-slate-600" />
               </div>
-              <p className="text-slate-600">{t('variousMedia')} • 2012 - 2015</p>
+              <p className="text-slate-600">Varios canales de televisión · 2012 – 2019</p>
             </CardHeader>
             <CardContent>
               <p className="text-slate-700">
-                {t('columnistDesc')}
+                {t('techColumnistDesc')}
               </p>
             </CardContent>
           </Card>

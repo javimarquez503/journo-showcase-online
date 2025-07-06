@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 
-type Language = 'en' | 'es';
+type Language = 'es' | 'en';
 
 interface LanguageContextType {
   language: Language;
@@ -9,81 +9,6 @@ interface LanguageContextType {
 }
 
 const translations = {
-  en: {
-    // Navigation
-    about: 'About',
-    experience: 'Experience', 
-    articles: 'Articles',
-    contact: 'Contact',
-    
-    // Hero Section
-    name: 'Javier Marquez',
-    title: 'Tech Journalist',
-    description: "I'm a tech journalist with a solid background in broadcasting and digital media. I write for Xataka, one of the leading Spanish-language technology publications, and have covered everything from AI and cybersecurity to mobile devices and innovation. I began my career in radio and television in Argentina and later moved to Spain, where I focus on technology that impacts everyday life.",
-    viewWork: 'View My Work',
-    getInTouch: 'Get In Touch',
-    
-    // About Section
-    aboutTitle: 'About Me',
-    aboutP1: "I'm a tech journalist with a solid background in broadcasting and digital media. I write for Xataka, one of the leading Spanish-language technology publications, and have covered everything from AI and cybersecurity to mobile devices and innovation.",
-    aboutP2: "I began my career in radio and television in Argentina and later moved to Spain, where I focus on technology that impacts everyday life. My work spans from breaking down complex AI developments to reviewing the latest consumer electronics.",
-    aboutP3: "When I'm not writing about the latest tech trends, I enjoy exploring how emerging technologies can make a real difference in people's daily lives, always keeping accessibility and practical impact at the forefront of my reporting.",
-    
-    // Experience Section
-    experienceTitle: 'Experience',
-    editor: 'Editor',
-    techWriter: 'Tech Writer',
-    techContentPresenter: 'Tech Content Presenter',
-    journalist: 'Journalist',
-    host: 'Host',
-    newsAnchor: 'News Anchor',
-    techColumnist: 'Technology Columnist',
-    editorDesc: 'Writing about consumer technology, AI, cybersecurity and innovation for the leading tech publication in Spanish.',
-    techWriterDesc: 'Covered consumer electronics, software and cybersecurity with a focus on practical impact.',
-    presenterDesc: 'Produced and presented tech-related content for one of Argentina\'s most popular radio stations.',
-    journalistDesc: 'Created digital and on-air tech content; audience analytics and metric reporting.',
-    hostDesc: 'Produced and hosted a regional TV show focused on explaining emerging technologies.',
-    anchorDesc: 'Anchored and co-produced the evening news. Reported live from the field on major events.',
-    columnistDesc: 'Wrote and presented weekly tech segments for television and radio audiences in San Luis, Argentina.',
-    
-    // Articles Section
-    articlesTitle: 'Featured Articles',
-    article1Title: 'I\'ve just finished high school and want to work in AI. What should I study?',
-    article1Desc: 'A deep-dive featuring leading voices in Spanish tech to guide the next generation of AI professionals.',
-    article2Title: 'How often should we change all our passwords?',
-    article2Desc: 'A cybersecurity piece that gathers expert opinions on a habit we all question but rarely update.',
-    article3Title: 'What\'s the point of the Robinson List? We asked the experts',
-    article3Desc: 'An investigation into the effectiveness of Spain\'s main opt-out advertising register.',
-    article4Title: 'Hands-on: Xiaomi 15 Ultra',
-    article4Desc: 'First impressions of Xiaomi\'s flagship: camera, performance and why it matters in 2025.',
-    article5Title: 'Hands-on: Samsung Galaxy Tab S10 FE+',
-    article5Desc: 'Early impressions of Samsung\'s new tablet: productivity meets affordability.',
-    article6Title: 'Hands-on: OPPO Reno 13 Pro 5G',
-    article6Desc: 'A sleek contender in the mid-range with a premium feel and strong photography focus.',
-    
-    // Contact Section
-    contactTitle: 'Get In Touch',
-    contactSubtitle: 'Let\'s Connect',
-    contactDesc: 'Have a story idea, want to discuss tech trends, or interested in collaborating? I\'d love to hear from you. Technology moves fast, and the best stories come from meaningful conversations.',
-    namePlaceholder: 'Your Name',
-    emailPlaceholder: 'Your Email',
-    subjectPlaceholder: 'Subject',
-    messagePlaceholder: 'Your Message',
-    sendMessage: 'Send Message',
-    messageSent: 'Message sent!',
-    messageDesc: 'Thank you for your message. I\'ll get back to you soon.',
-    
-    // Footer
-    footerText: '© 2024 Javier Marquez. All rights reserved. | Tech journalist covering innovation, AI, and cybersecurity.',
-    
-    // Publications
-    xataka: 'Xataka',
-    hipertextual: 'Hipertextual',
-    la100: 'La 100',
-    radioMitre: 'Radio Mitre',
-    ctv: 'CTV',
-    variousMedia: 'Various Media'
-  },
   es: {
     // Navigation
     about: 'Acerca de',
@@ -107,19 +32,17 @@ const translations = {
     // Experience Section
     experienceTitle: 'Experiencia',
     editor: 'Editor',
-    techWriter: 'Redactor Tecnológico',
-    techContentPresenter: 'Presentador de Contenido Tecnológico',
-    journalist: 'Periodista',
-    host: 'Conductor',
-    newsAnchor: 'Presentador de Noticias',
+    techWriter: 'Redactor tecnológico',
+    digitalContentCreator: 'Creador de contenidos digitales',
+    hostProducer: 'Conductor y productor',
+    newsAnchor: 'Presentador de noticias y reportero',
     techColumnist: 'Columnista de Tecnología',
-    editorDesc: 'Escribiendo sobre tecnología de consumo, IA, ciberseguridad e innovación para la principal publicación tecnológica en español.',
-    techWriterDesc: 'Cubrí electrónicos de consumo, software y ciberseguridad con enfoque en el impacto práctico.',
-    presenterDesc: 'Produje y presenté contenido relacionado con tecnología para una de las estaciones de radio más populares de Argentina.',
-    journalistDesc: 'Creé contenido tecnológico digital y al aire; análisis de audiencia y reporte de métricas.',
-    hostDesc: 'Produje y conduje un programa de TV regional enfocado en explicar tecnologías emergentes.',
-    anchorDesc: 'Presenté y coproducí el noticiero de la noche. Reporté en vivo desde el campo en eventos importantes.',
-    columnistDesc: 'Escribí y presenté segmentos tecnológicos semanales para audiencias de televisión y radio en San Luis, Argentina.',
+    editorDesc: 'Escribo sobre tecnología de consumo, inteligencia artificial, ciberseguridad e innovación en Xataka, la principal publicación tecnológica en español. Mi trabajo consiste en analizar estos temas con rigor, teniendo siempre presente el contexto y cómo estos cambios impactan en nuestra vida cotidiana.',
+    techWriterDesc: 'Escribí sobre tecnología de consumo, software y ciberseguridad, con una redacción clara y precisa. El objetivo era explicar temas complejos de forma comprensible y útil para el lector.',
+    digitalContentCreatorDesc: 'Formé parte del equipo digital de ambas emisoras, creando artículos para sus webs y presentando vídeos sobre tecnología para redes sociales. Muchos de esos contenidos se publicaron en la cuenta de Instagram de La 100, con más de dos millones de seguidores.',
+    hostProducerDesc: 'Estuve al frente del programa "Tecnología para vos", en el que presentaba novedades tecnológicas y realizaba entrevistas. Además de conducir el espacio, también me encargaba de su producción.',
+    newsAnchorDesc: 'Durante casi cinco años presenté el noticiero nocturno y cubrí noticias desde el lugar de los hechos. Viví el periodismo desde dentro y desde fuera.',
+    techColumnistDesc: 'Durante este periodo participé como columnista de tecnología en distintos programas de televisión, explicando avances tecnológicos y su impacto en el día a día.',
     
     // Articles Section
     articlesTitle: 'Artículos Destacados',
@@ -158,6 +81,79 @@ const translations = {
     radioMitre: 'Radio Mitre',
     ctv: 'CTV',
     variousMedia: 'Medios Varios'
+  },
+  en: {
+    // Navigation
+    about: 'About',
+    experience: 'Experience', 
+    articles: 'Articles',
+    contact: 'Contact',
+    
+    // Hero Section
+    name: 'Javier Marquez',
+    title: 'Tech Journalist',
+    description: "I'm a tech journalist with a solid background in broadcasting and digital media. I write for Xataka, one of the leading Spanish-language technology publications, and have covered everything from AI and cybersecurity to mobile devices and innovation. I began my career in radio and television in Argentina and later moved to Spain, where I focus on technology that impacts everyday life.",
+    viewWork: 'View My Work',
+    getInTouch: 'Get In Touch',
+    
+    // About Section
+    aboutTitle: 'About Me',
+    aboutP1: "I'm a tech journalist with a solid background in broadcasting and digital media. I write for Xataka, one of the leading Spanish-language technology publications, and have covered everything from AI and cybersecurity to mobile devices and innovation.",
+    aboutP2: "I began my career in radio and television in Argentina and later moved to Spain, where I focus on technology that impacts everyday life. My work spans from breaking down complex AI developments to reviewing the latest consumer electronics.",
+    aboutP3: "When I'm not writing about the latest tech trends, I enjoy exploring how emerging technologies can make a real difference in people's daily lives, always keeping accessibility and practical impact at the forefront of my reporting.",
+    
+    // Experience Section
+    experienceTitle: 'Experience',
+    editor: 'Editor',
+    techWriter: 'Tech Writer',
+    digitalContentCreator: 'Digital Content Creator',
+    hostProducer: 'Host & Producer',
+    newsAnchor: 'News Anchor & Reporter',
+    techColumnist: 'Technology Columnist',
+    editorDesc: 'Writing about consumer technology, AI, cybersecurity and innovation for the leading tech publication in Spanish.',
+    techWriterDesc: 'Covered consumer electronics, software and cybersecurity with a focus on practical impact.',
+    digitalContentCreatorDesc: 'Produced and presented tech-related content for one of Argentina\'s most popular radio stations.',
+    hostProducerDesc: 'Created digital and on-air tech content; audience analytics and metric reporting.',
+    newsAnchorDesc: 'Produced and hosted a regional TV show focused on explaining emerging technologies.',
+    techColumnistDesc: 'Anchored and co-produced the evening news. Reported live from the field on major events.',
+    
+    // Articles Section
+    articlesTitle: 'Featured Articles',
+    article1Title: 'I\'ve just finished high school and want to work in AI. What should I study?',
+    article1Desc: 'A deep-dive featuring leading voices in Spanish tech to guide the next generation of AI professionals.',
+    article2Title: 'How often should we change all our passwords?',
+    article2Desc: 'A cybersecurity piece that gathers expert opinions on a habit we all question but rarely update.',
+    article3Title: 'What\'s the point of the Robinson List? We asked the experts',
+    article3Desc: 'An investigation into the effectiveness of Spain\'s main opt-out advertising register.',
+    article4Title: 'Hands-on: Xiaomi 15 Ultra',
+    article4Desc: 'First impressions of Xiaomi\'s flagship: camera, performance and why it matters in 2025.',
+    article5Title: 'Hands-on: Samsung Galaxy Tab S10 FE+',
+    article5Desc: 'Early impressions of Samsung\'s new tablet: productivity meets affordability.',
+    article6Title: 'Hands-on: OPPO Reno 13 Pro 5G',
+    article6Desc: 'A sleek contender in the mid-range with a premium feel and strong photography focus.',
+    
+    // Contact Section
+    contactTitle: 'Get In Touch',
+    contactSubtitle: 'Let\'s Connect',
+    contactDesc: 'Have a story idea, want to discuss tech trends, or interested in collaborating? I\'d love to hear from you. Technology moves fast, and the best stories come from meaningful conversations.',
+    namePlaceholder: 'Your Name',
+    emailPlaceholder: 'Your Email',
+    subjectPlaceholder: 'Subject',
+    messagePlaceholder: 'Your Message',
+    sendMessage: 'Send Message',
+    messageSent: 'Message sent!',
+    messageDesc: 'Thank you for your message. I\'ll get back to you soon.',
+    
+    // Footer
+    footerText: '© 2024 Javier Marquez. All rights reserved. | Tech journalist covering innovation, AI, and cybersecurity.',
+    
+    // Publications
+    xataka: 'Xataka',
+    hipertextual: 'Hipertextual',
+    la100: 'La 100',
+    radioMitre: 'Radio Mitre',
+    ctv: 'CTV',
+    variousMedia: 'Various Media'
   }
 };
 
