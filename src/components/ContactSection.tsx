@@ -117,8 +117,8 @@ const ContactSection = () => {
                 <span className="text-slate-700">javimarqueztech@gmail.com</span>
               </div>
               <div className="flex items-center">
-                <span className="text-slate-600 mr-3">📱</span>
-                <span className="text-slate-700">(555) 123-4567</span>
+                <span className="text-slate-600 mr-3">💬</span>
+                <span className="text-slate-700">Signal: javimarquez.01</span>
               </div>
               <div className="flex items-center">
                 <span className="text-slate-600 mr-3">📍</span>
