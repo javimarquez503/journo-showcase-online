@@ -7,7 +7,7 @@ const LanguageSwitcher = () => {
   const { language, setLanguage } = useLanguage();
 
   const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'es' : 'en');
+    setLanguage(language === 'es' ? 'en' : 'es');
   };
 
   return (
@@ -19,7 +19,7 @@ const LanguageSwitcher = () => {
     >
       <Globe className="h-4 w-4" />
       <span className="text-sm font-medium">
-        {language === 'en' ? 'ES' : 'EN'}
+        {language === 'es' ? 'EN' : 'ES'}
       </span>
     </Button>
   );
