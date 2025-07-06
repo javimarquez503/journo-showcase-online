@@ -100,26 +100,26 @@ const translations = {
     
     // About Section
     aboutTitle: 'Acerca de Mí',
-    aboutP1: 'Informar sobre tecnología no es solo hablar de lo nuevo. Es explicar cómo nos afecta, qué hay detrás y hacia dónde vamos. Esa es la responsabilidad que asumo como periodista: con rigor, con fuentes fiables y con respeto por quien nos lee.',
-    aboutP2: 'En Xataka encuentro el entorno perfecto para mantener ese compromiso. Trabajar allí es exigente, pero también es una forma de estar a la altura de un momento clave para entender el mundo que viene.',
-    aboutP3: '',
+    aboutP1: 'Soy un periodista tecnológico con una sólida formación en medios audiovisuales y digitales. Escribo para Xataka, una de las principales publicaciones tecnológicas en español, y he cubierto todo desde IA y ciberseguridad hasta dispositivos móviles e innovación.',
+    aboutP2: 'Comencé mi carrera en radio y televisión en Argentina y luego me mudé a España, donde me enfoco en tecnología que impacta la vida cotidiana. Mi trabajo abarca desde desglosar desarrollos complejos de IA hasta reseñar los últimos productos electrónicos de consumo.',
+    aboutP3: 'Cuando no estoy escribiendo sobre las últimas tendencias tecnológicas, disfruto explorando cómo las tecnologías emergentes pueden marcar una diferencia real en la vida diaria de las personas, siempre manteniendo la accesibilidad y el impacto práctico en el centro de mis reportajes.',
     
     // Experience Section
     experienceTitle: 'Experiencia',
     editor: 'Editor',
-    techWriter: 'Redactor de tecnología',
-    techContentPresenter: 'Creador de contenidos digitales',
-    journalist: 'Conductor y productor',
-    host: 'Presentador de noticias y reportero',
-    newsAnchor: 'Columnista de Tecnología',
-    techColumnist: '',
-    editorDesc: 'Webedia / Xataka · Dic 2021 – Actualidad',
-    techWriterDesc: 'Hipertextual · Nov 2020 – Dic 2021. Escribí sobre tecnología de consumo, software y ciberseguridad, con una redacción clara y precisa. El objetivo era explicar temas complejos de forma comprensible y útil para el lector.',
-    presenterDesc: 'Grupo Clarín (Radio Mitre y La 100) · Nov 2020 – Dic 2021. Formé parte del equipo digital del grupo de medios más importante de Argentina. Escribía artículos para sus portales web y también creaba vídeos sobre tecnología que se publicaban en una cuenta de Instagram con más de dos millones de seguidores.',
-    journalistDesc: 'CTV · Oct 2018 – Abr 2019',
-    hostDesc: 'CTV · 2014 – 2019. Durante casi cinco años estuve al frente de un noticiero nocturno y también cubrí noticias en exteriores, trabajando en directo desde el lugar de los hechos.',
-    anchorDesc: 'Varios canales de televisión · 2012 – 2019',
-    columnistDesc: '',
+    techWriter: 'Redactor Tecnológico',
+    techContentPresenter: 'Presentador de Contenido Tecnológico',
+    journalist: 'Periodista',
+    host: 'Conductor',
+    newsAnchor: 'Presentador de Noticias',
+    techColumnist: 'Columnista de Tecnología',
+    editorDesc: 'Escribiendo sobre tecnología de consumo, IA, ciberseguridad e innovación para la principal publicación tecnológica en español.',
+    techWriterDesc: 'Cubrí electrónicos de consumo, software y ciberseguridad con enfoque en el impacto práctico.',
+    presenterDesc: 'Produje y presenté contenido relacionado con tecnología para una de las estaciones de radio más populares de Argentina.',
+    journalistDesc: 'Creé contenido tecnológico digital y al aire; análisis de audiencia y reporte de métricas.',
+    hostDesc: 'Produje y conduje un programa de TV regional enfocado en explicar tecnologías emergentes.',
+    anchorDesc: 'Presenté y coproducí el noticiero de la noche. Reporté en vivo desde el campo en eventos importantes.',
+    columnistDesc: 'Escribí y presenté segmentos tecnológicos semanales para audiencias de televisión y radio en San Luis, Argentina.',
     
     // Articles Section
     articlesTitle: 'Artículos Destacados',
@@ -157,7 +157,7 @@ const translations = {
     la100: 'La 100',
     radioMitre: 'Radio Mitre',
     ctv: 'CTV',
-    variousMedia: 'Varios canales de televisión'
+    variousMedia: 'Medios Varios'
   }
 };
 
