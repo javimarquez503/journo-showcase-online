@@ -20,11 +20,11 @@ const translations = {
     name: 'Javier Marquez',
     title: 'Periodista de tecnología',
     description: 'Soy periodista especializado en tecnología, con amplia experiencia en medios. Escribo en Xataka, la principal publicación tecnológica en español, y he cubierto temas que van desde inteligencia artificial y ciberseguridad hasta dispositivos móviles e innovación. Comencé mi carrera en Argentina, trabajando en radio, televisión y contenidos digitales, y más tarde me trasladé a España, donde continúo mi desarrollo profesional.',
-    viewWork: 'Ver Mi Trabajo',
+    viewWork: 'Ver Mi trabajo',
     getInTouch: 'Contactar',
     
     // About Section
-    aboutTitle: 'Acerca de Mí',
+    aboutTitle: 'Acerca de mí',
     aboutP1: 'Informar sobre tecnología no es solo hablar de lo nuevo. Es explicar cómo nos afecta, qué hay detrás y hacia dónde vamos. Esa es la responsabilidad que asumo como periodista: con rigor, con fuentes fiables y con respeto por quien nos lee.',
     aboutP2: 'En Xataka encuentro el entorno perfecto para mantener ese compromiso. Trabajar allí es exigente, pero también es una forma de estar a la altura de un momento clave para entender el mundo que viene.',
     aboutP3: '',
@@ -45,7 +45,7 @@ const translations = {
     techColumnistDesc: 'Durante este periodo participé como columnista de tecnología en distintos programas de televisión, explicando avances tecnológicos y su impacto en el día a día.',
     
     // Articles Section
-    articlesTitle: 'Artículos Destacados',
+    articlesTitle: 'Artículos destacados',
     article1Title: 'He terminado la PAU y quiero dedicarme a la IA: ¿qué tengo que estudiar?',
     article1Desc: 'Un análisis profundo con las voces líderes en tecnología española para guiar a la próxima generación de profesionales de IA.',
     article2Title: 'Cada cuánto debemos cambiar TODAS nuestras contraseñas según tres expertos en ciberseguridad',
@@ -60,7 +60,7 @@ const translations = {
     article6Desc: 'Un competidor elegante en la gama media con sensación premium y fuerte enfoque fotográfico.',
     
     // Contact Section
-    contactTitle: 'Ponte en Contacto',
+    contactTitle: 'Ponte en contacto',
     contactSubtitle: 'Conectemos',
     contactDesc: '¿Tienes una idea para una historia, quieres discutir tendencias tecnológicas, o estás interesado en colaborar? Me encantaría escucharte. La tecnología avanza rápido, y las mejores historias vienen de conversaciones significativas.',
     namePlaceholder: 'Tu Nombre',
