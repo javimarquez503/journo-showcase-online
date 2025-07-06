@@ -1,4 +1,3 @@
-
 import { createContext, useContext, useState, ReactNode } from 'react';
 
 type Language = 'en' | 'es';
@@ -13,7 +12,7 @@ const translations = {
   en: {
     // Navigation
     about: 'About',
-    experience: 'Experience',
+    experience: 'Experience', 
     articles: 'Articles',
     contact: 'Contact',
     
@@ -95,7 +94,7 @@ const translations = {
     // Hero Section
     name: 'Javier Marquez',
     title: 'Periodista Tecnológico',
-    description: 'Soy un periodista tecnológico con una sólida formación en medios audiovisuales y digitales. Escribo para Xataka, una de las principales publicaciones tecnológicas en español, y he cubierto todo desde IA y ciberseguridad hasta dispositivos móviles e innovación. Comencé mi carrera en radio y televisión en Argentina y luego me mudé a España, donde me enfoco en tecnología que impacta la vida cotidiana.',
+    description: 'Soy periodista especializado en tecnología, con amplia experiencia en medios. Escribo en Xataka, la principal publicación tecnológica en español, y he cubierto temas que van desde inteligencia artificial y ciberseguridad hasta dispositivos móviles e innovación. Comencé mi carrera en Argentina, trabajando en radio, televisión y contenidos digitales, y más tarde me trasladé a España, donde continúo mi desarrollo profesional.',
     viewWork: 'Ver Mi Trabajo',
     getInTouch: 'Contactar',
     
