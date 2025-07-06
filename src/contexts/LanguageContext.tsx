@@ -145,7 +145,7 @@ const translations = {
     messageDesc: 'Thank you for your message. I\'ll get back to you soon.',
     
     // Footer
-    footerText: '© 2024 Javier Marquez. All rights reserved. | Tech journalist covering innovation, AI, and cybersecurity.',
+    footerText: '© 2025 Javier Marquez. All rights reserved.',
     
     // Publications
     xataka: 'Xataka',
