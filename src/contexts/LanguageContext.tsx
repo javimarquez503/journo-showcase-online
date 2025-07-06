@@ -12,7 +12,7 @@ const translations = {
   es: {
     // Navigation
     about: 'Acerca de',
-    experience: 'Experiencia',
+    experience: 'Experiencia', 
     articles: 'Artículos',
     contact: 'Contacto',
     
@@ -25,9 +25,9 @@ const translations = {
     
     // About Section
     aboutTitle: 'Acerca de Mí',
-    aboutP1: 'Soy un periodista tecnológico con una sólida formación en medios audiovisuales y digitales. Escribo para Xataka, una de las principales publicaciones tecnológicas en español, y he cubierto todo desde IA y ciberseguridad hasta dispositivos móviles e innovación.',
-    aboutP2: 'Comencé mi carrera en radio y televisión en Argentina y luego me mudé a España, donde me enfoco en tecnología que impacta la vida cotidiana. Mi trabajo abarca desde desglosar desarrollos complejos de IA hasta reseñar los últimos productos electrónicos de consumo.',
-    aboutP3: 'Cuando no estoy escribiendo sobre las últimas tendencias tecnológicas, disfruto explorando cómo las tecnologías emergentes pueden marcar una diferencia real en la vida diaria de las personas, siempre manteniendo la accesibilidad y el impacto práctico en el centro de mis reportajes.',
+    aboutP1: 'Informar sobre tecnología no es solo hablar de lo nuevo. Es explicar cómo nos afecta, qué hay detrás y hacia dónde vamos. Esa es la responsabilidad que asumo como periodista: con rigor, con fuentes fiables y con respeto por quien nos lee.',
+    aboutP2: 'En Xataka encuentro el entorno perfecto para mantener ese compromiso. Trabajar allí es exigente, pero también es una forma de estar a la altura de un momento clave para entender el mundo que viene.',
+    aboutP3: '',
     
     // Experience Section
     experienceTitle: 'Experiencia',

@@ -15,9 +15,6 @@ const AboutSection = () => {
           <p className="mb-6">
             {t('aboutP2')}
           </p>
-          <p>
-            {t('aboutP3')}
-          </p>
         </div>
       </div>
     </section>
